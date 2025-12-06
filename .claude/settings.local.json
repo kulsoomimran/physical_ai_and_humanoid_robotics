@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p docs/docs/modules/module1 docs/docs/modules/module2 docs/docs/modules/module3 docs/docs/modules/module4)",
+      "WebSearch",
+      "Bash(.specifyscriptspowershellcheck-prerequisites.ps1 -Json -RequireTasks -IncludeTasks)",
+      "WebFetch(domain:docs.ros.org)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
