@@ -1,55 +1,71 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: None (initial creation) → 1.0.0
+List of modified principles: All principles are new.
+Added sections: Vision, Success Criteria, Constraints, Stakeholders, Brand Voice
+Removed sections: None
+Templates requiring updates:
+  - .specify/templates/plan-template.md: ✅ updated (checked for alignment)
+  - .specify/templates/spec-template.md: ✅ updated (checked for alignment)
+  - .specify/templates/tasks-template.md: ✅ updated (checked for alignment)
+  - .specify/templates/commands/*.md: ✅ updated (checked for alignment)
+Follow-up TODOs: None
+-->
+# Physical AI & Humanoid Robotics Constitution
+
+## Vision
+The vision for the book "Physical AI & Humanoid Robotics" is to be the definitive guide for engineers, researchers, and enthusiasts looking to bridge the gap between theoretical AI and practical, embodied robotics. It aims to empower readers with the knowledge and tools to design, implement, and deploy intelligent humanoid robots capable of interacting with the physical world.
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Practical & Hands-on
+Every concept and technology discussed must be accompanied by practical examples, code snippets, and hands-on exercises. The book should prioritize actionable insights and implementation details over abstract theory, enabling readers to build and experiment directly.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Comprehensive Modules
+The content must comprehensively cover the specified modules: ROS 2, Gazebo & Unity for simulation, NVIDIA Isaac for accelerated robotics development, and Vision-Language-Action (VLA) for advanced AI integration. Each module should be explored in sufficient depth to provide a solid foundational understanding and practical application knowledge.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Clear & Accessible
+The writing style must be clear, concise, and accessible to a diverse audience, ranging from advanced students to seasoned professionals. Complex topics should be broken down into understandable components, using clear explanations, analogies, and visual aids where appropriate. Avoid overly academic jargon without sufficient explanation.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Future-Oriented
+The content should reflect current best practices and emerging trends in Physical AI and Humanoid Robotics. While providing foundational knowledge, it must also look towards future developments, preparing readers for the evolving landscape of robotics. Regular updates and revisions should be considered to maintain relevance.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Ethical Robotics
+The book must address the ethical implications and societal impact of humanoid robotics and physical AI. Discussions on responsible development, bias, safety, and the future of human-robot interaction should be integrated where relevant, fostering a thoughtful approach to the technology.
 
-### [PRINCIPLE_6_NAME]
+## Success Criteria
 
+*   Clarity and Understandability: Readers can easily grasp complex concepts and apply them in practical scenarios.
+*   Completeness: All specified modules (ROS 2, Gazebo & Unity, NVIDIA Isaac, VLA) are covered thoroughly with practical examples.
+*   Engagement: The content keeps readers engaged and encourages hands-on experimentation.
+*   Impact: The book empowers readers to build and deploy intelligent humanoid robotics solutions.
+*   Positive Feedback: High ratings and positive reviews from target audience members, indicating value and utility.
 
-[PRINCIPLE__DESCRIPTION]
+## Constraints
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+*   Docusaurus Platform: The book must be publishable and render correctly within the Docusaurus framework, adhering to its structural and formatting guidelines.
+*   Technical Accuracy: All technical information, code examples, and theoretical explanations must be accurate and verifiable.
+*   Current Technologies: Focus on the latest stable versions and best practices for the covered technologies (ROS 2, Gazebo, Unity, NVIDIA Isaac, VLA frameworks).
+*   Open-Source Focus: Prioritize the use of open-source tools and libraries where feasible, making the content accessible to a broader audience without proprietary software barriers.
+*   Modularity: The content should be structured modularly to allow for easy updates and extensions of individual topics.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Stakeholders
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+*   Primary Audience: Robotics engineers, AI researchers, software developers, graduate students, and advanced hobbyists interested in physical AI and humanoid robotics.
+*   Secondary Audience: Educators, technical trainers, and companies seeking to onboard talent in the field.
+*   Authors/Contributors: Responsible for content creation, technical accuracy, and adherence to editorial guidelines.
+*   Publisher/Platform Maintainers: Ensuring the book's distribution, accessibility, and platform functionality (Docusaurus).
+*   Technology Providers: (e.g., NVIDIA, Unity, ROS Foundation) whose technologies are featured and whose insights may contribute to the content.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Brand Voice
+
+*   Authoritative yet Approachable: Demonstrate deep expertise while maintaining a friendly, encouraging, and easy-to-understand tone.
+*   Enthusiastic and Inspiring: Convey the excitement and potential of physical AI and humanoid robotics.
+*   Precise and Clear: Use technical terminology accurately, but always provide clear explanations for complex concepts.
+*   Practical and Action-Oriented: Focus on empowering readers to build and apply knowledge.
+*   Ethical and Responsible: Integrate discussions on the responsible development and deployment of robotics.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This Constitution supersedes all other project practices. Amendments require a formal proposal, review by key stakeholders, and a documented approval process, along with a migration plan for any breaking changes. All contributions (PRs, documentation updates, code reviews) must verify compliance with these principles. Complexity must always be justified with clear rationale.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-06 | **Last Amended**: 2025-12-06
