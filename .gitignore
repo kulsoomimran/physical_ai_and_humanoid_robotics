@@ -12,6 +12,20 @@ __pycache__/
 venv/
 dist/
 *.egg-info/
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+.env.local
+.env.production
+*.env.local
+*.env.production
+.env.test
+*.env.test
+logs/
+*.log
+.env*
+!.env.example
 
 # C++
 build/
