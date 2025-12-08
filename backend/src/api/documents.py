@@ -75,6 +75,13 @@ async def ingest_user_text(request: IngestUserTextRequest, db: Session = Depends
             context_mode="user_text"
         )
 
+        # Unload the model to save memory after processing
+        try:
+            rag_service.unload_model()
+        except:
+            # If unload fails, continue anyway
+            pass
+
         return IngestUserTextResponse(
             message=f"Successfully ingested user text into {len(chunks)} chunks",
             chunks_ingested=len(chunks),

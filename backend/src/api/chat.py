@@ -231,6 +231,13 @@ async def query_chat(session_token: str, request: SecureQueryRequest, db: Sessio
             for citation in citations
         ]
 
+        # Unload the model to save memory after processing
+        try:
+            rag_service.unload_model()
+        except:
+            # If unload fails, continue anyway
+            pass
+
         return QueryResponse(
             response=response_content,
             session_token=session_token,
