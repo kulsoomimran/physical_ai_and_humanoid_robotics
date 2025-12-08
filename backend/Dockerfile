@@ -1,5 +1,5 @@
-# Use Python 3.11 slim image as the base
-FROM python:3.11-slim
+# Use Python 3.12 slim image as the base (compatible with PyTorch)
+FROM python:3.12-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -28,10 +28,9 @@ RUN pip config set global.index-url https://pypi.org/simple && \
 COPY requirements.txt .
 
 # Install Python dependencies with PyTorch CPU index prioritized to ensure pre-compiled wheels
-RUN pip install --no-cache-dir -r requirements.txt \
-    --index-url https://download.pytorch.org/whl/cpu \
-    --extra-index-url https://pypi.org/simple \
-    --prefer-binary
+RUN pip install --no-cache-dir --prefer-binary -r requirements.txt \
+    --index-url https://pypi.org/simple \
+    --extra-index-url https://download.pytorch.org/whl/cpu
 
 # Copy project
 COPY . .
