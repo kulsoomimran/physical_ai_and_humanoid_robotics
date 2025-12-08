@@ -27,10 +27,11 @@ RUN pip config set global.index-url https://pypi.org/simple && \
 # Copy requirements first to leverage Docker cache
 COPY requirements.txt .
 
-# Install Python dependencies with stable mirror fallback
+# Install Python dependencies with PyTorch CPU index prioritized to ensure pre-compiled wheels
 RUN pip install --no-cache-dir -r requirements.txt \
-    --index-url https://pypi.org/simple \
-    --extra-index-url https://download.pytorch.org/whl/cpu
+    --index-url https://download.pytorch.org/whl/cpu \
+    --extra-index-url https://pypi.org/simple \
+    --prefer-binary
 
 # Copy project
 COPY . .
