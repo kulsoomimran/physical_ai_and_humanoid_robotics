@@ -7,8 +7,6 @@ asyncpg==0.29.0
 qdrant-client==1.13.2
 python-dotenv==1.0.0
 numpy<2
-torch==2.2.1
-transformers==4.39.3
 sentence-transformers==2.6.1
 psycopg2-binary==2.9.9
 pytest==7.4.3
