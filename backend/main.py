@@ -22,9 +22,14 @@ async def lifespan(app: FastAPI):
     # Startup
     logger.info("Initializing application...")
 
-    # Initialize vector database collections
-    initialize_collections()
-    logger.info("Vector database initialized")
+    try:
+        # Initialize vector database collections
+        initialize_collections()
+        logger.info("Vector database initialized")
+    except Exception as e:
+        # Log the error but don't prevent the app from starting
+        logger.error(f"Failed to initialize vector database: {e}")
+        logger.warning("Application will start without vector database functionality")
 
     yield
 
