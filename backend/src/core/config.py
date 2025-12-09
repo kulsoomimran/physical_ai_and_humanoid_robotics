@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = "RAG Chatbot API"
 
     # CORS settings - more secure defaults
-    ALLOWED_ORIGINS: List[str] = ["http://localhost:3000", "http://127.0.0.1:3000", "http://localhost:8000"]  # In production, specify actual origins
+    ALLOWED_ORIGINS: List[str] = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000,http://localhost:8000,https://ai-and-humanoid-robotics-book.vercel.app").split(",")
 
     # Database settings
     DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql+asyncpg://user:password@localhost/dbname")
