@@ -62,6 +62,15 @@ async def lifespan(app: FastAPI):
         app.include_router(chat_router, prefix="/chat", tags=["chat"])
         app.include_router(documents_router, prefix="/documents", tags=["documents"])
 
+        # Initialize vector database collections
+        try:
+            from src.config.vector_db import initialize_collections
+            initialize_collections()
+            logger.info("Vector database initialized successfully")
+        except Exception as e:
+            logger.error(f"Failed to initialize vector database: {e}")
+            logger.warning("Application will run without vector database functionality")
+
         logger.info("All imports and setup completed successfully")
 
     except Exception as e:
