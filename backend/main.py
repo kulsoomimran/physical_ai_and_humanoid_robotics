@@ -3,7 +3,17 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from contextlib import asynccontextmanager
 import logging
-import asyncio
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.responses import Response
+from typing import Callable
+
+# Import configuration
+from src.core.config import settings
+
+# Import API routers
+from src.api.chat import router as chat_router
+from src.api.health import router as health_router
+from src.api.documents import router as documents_router
 
 # Set up basic logging
 logging.basicConfig(level=logging.INFO)
@@ -59,12 +69,6 @@ app.add_middleware(
 )
 
 
-# Add security headers
-from starlette.middleware.base import BaseHTTPMiddleware
-from starlette.responses import Response
-from typing import Callable
-
-
 class SecurityHeadersMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request, call_next):
         response = await call_next(request)
@@ -91,9 +95,3 @@ app.include_router(documents_router, prefix="/documents", tags=["documents"])
 @app.get("/")
 def read_root():
     return {"message": "RAG Chatbot API is running!"}
-
-if __name__ == "__main__":
-    import uvicorn
-    import os
-    port = int(os.environ.get("PORT", 8000))
-    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
