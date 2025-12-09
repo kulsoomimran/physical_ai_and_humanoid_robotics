@@ -2,13 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from contextlib import asynccontextmanager
-from src.config.database import engine
-from src.config.vector_db import initialize_collections
-from src.api.chat import router as chat_router
-from src.api.health import router as health_router
-from src.api.documents import router as documents_router
-from src.core.config import settings
 import logging
+import asyncio
 
 # Set up basic logging
 logging.basicConfig(level=logging.INFO)
@@ -22,8 +17,10 @@ async def lifespan(app: FastAPI):
     # Startup
     logger.info("Initializing application...")
 
+    # Initialize vector database collections in a non-blocking way
     try:
-        # Initialize vector database collections
+        from src.config.vector_db import initialize_collections
+        # Run initialization but don't block startup if it fails
         initialize_collections()
         logger.info("Vector database initialized")
     except Exception as e:
