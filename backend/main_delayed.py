@@ -92,10 +92,3 @@ app.include_router(documents_router, prefix="/documents", tags=["documents"])
 @app.get("/")
 def read_root():
     return {"message": "RAG Chatbot API is running!"}
-
-if __name__ == "__main__":
-    import uvicorn
-    import os
-    port = int(os.environ.get("PORT", 8000))
-    reload = os.getenv("ENVIRONMENT", "development").lower() != "production"
-    uvicorn.run("main_delayed:app", host="0.0.0.0", port=port, reload=reload)
