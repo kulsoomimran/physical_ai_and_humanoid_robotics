@@ -18,15 +18,15 @@ class Settings(BaseSettings):
     ALLOWED_ORIGINS: List[str] = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000,http://localhost:8000,https://ai-and-humanoid-robotics-book.vercel.app").split(",")
 
     # Database settings
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql+asyncpg://user:password@localhost/dbname")
+    DATABASE_URL: Optional[str] = os.getenv("DATABASE_URL")
 
     # Qdrant settings
-    QDRANT_URL: str = os.getenv("QDRANT_URL", "http://localhost:6333")
+    QDRANT_URL: Optional[str] = os.getenv("QDRANT_URL")
     QDRANT_API_KEY: Optional[str] = os.getenv("QDRANT_API_KEY")
     QDRANT_COLLECTION_NAME: str = os.getenv("QDRANT_COLLECTION_NAME", "document_chunks")
 
     # OpenAI API settings
-    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
+    OPENAI_API_KEY: Optional[str] = os.getenv("OPENAI_API_KEY")
     OPENAI_ASSISTANT_ID: Optional[str] = os.getenv("OPENAI_ASSISTANT_ID")
 
     # Gemini API settings (kept for compatibility)
