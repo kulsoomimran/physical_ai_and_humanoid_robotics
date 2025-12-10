@@ -28,8 +28,12 @@ logger.info("=" * 50)
 try:
     from src.core.config import settings
     logger.info("Configuration loaded successfully")
+    logger.info(f"ALLOWED_ORIGINS: {getattr(settings, 'ALLOWED_ORIGINS', ['*'])}")
 except Exception as e:
     logger.error(f"Failed to load configuration: {e}")
+    logger.error(f"Error details: {str(e)}")
+    import traceback
+    logger.error(traceback.format_exc())
     # Create minimal settings
     class MinimalSettings:
         ALLOWED_ORIGINS = ["*"]
