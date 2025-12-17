@@ -4,7 +4,8 @@
       "Bash(mkdir -p docs/docs/modules/module1 docs/docs/modules/module2 docs/docs/modules/module3 docs/docs/modules/module4)",
       "WebSearch",
       "Bash(.specifyscriptspowershellcheck-prerequisites.ps1 -Json -RequireTasks -IncludeTasks)",
-      "WebFetch(domain:docs.ros.org)"
+      "WebFetch(domain:docs.ros.org)",
+      "Bash(powershell \"Remove-Item -Path ''D:\\Kulsoom\\Hackathon\\first_hackathon\\backend\\src\\services\\__pycache__\\*rag_service*'' -Force\")"
     ],
     "deny": [],
     "ask": []
