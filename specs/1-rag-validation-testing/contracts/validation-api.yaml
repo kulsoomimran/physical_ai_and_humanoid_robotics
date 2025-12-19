@@ -1,0 +1,190 @@
+# RAG Validation API Contract
+
+## Validation Service API
+
+### Base URL
+`/api/validation`
+
+### Endpoints
+
+#### 1. POST /validate/embeddings
+Validates Cohere embedding generation from text chunks
+
+**Request:**
+```json
+{
+  "text_chunks": ["sample text chunk 1", "sample text chunk 2"],
+  "model_name": "embed-multilingual-v2.0",
+  "expected_dimensions": 768
+}
+```
+
+**Response:**
+```json
+{
+  "validation_id": "uuid",
+  "status": "pass|fail|partial",
+  "timestamp": "2025-12-19T10:30:00Z",
+  "metrics": {
+    "success_rate": 0.99,
+    "average_dimension_match": true,
+    "processing_time_ms": 1250
+  },
+  "details": [
+    {
+      "chunk_index": 0,
+      "embedding_generated": true,
+      "dimensions_correct": true,
+      "validation_errors": []
+    }
+  ]
+}
+```
+
+#### 2. POST /validate/storage
+Validates Qdrant storage with metadata
+
+**Request:**
+```json
+{
+  "collection_name": "rag-embeddings",
+  "expected_vector_size": 768,
+  "test_embeddings": [
+    {
+      "vector": [0.1, 0.2, ...],
+      "metadata": {
+        "source_url": "https://example.com/doc",
+        "content": "sample content"
+      }
+    }
+  ]
+}
+```
+
+**Response:**
+```json
+{
+  "validation_id": "uuid",
+  "status": "pass|fail|partial",
+  "timestamp": "2025-12-19T10:30:00Z",
+  "metrics": {
+    "storage_success_rate": 0.99,
+    "metadata_integrity": 1.0
+  },
+  "details": [
+    {
+      "record_id": "uuid",
+      "stored_successfully": true,
+      "metadata_complete": true,
+      "validation_errors": []
+    }
+  ]
+}
+```
+
+#### 3. POST /validate/retrieval
+Validates similarity-based retrieval from Qdrant
+
+**Request:**
+```json
+{
+  "collection_name": "rag-embeddings",
+  "test_queries": ["sample query 1", "sample query 2"],
+  "expected_sources": ["https://example.com/doc1"],
+  "top_k": 5
+}
+```
+
+**Response:**
+```json
+{
+  "validation_id": "uuid",
+  "status": "pass|fail|partial",
+  "timestamp": "2025-12-19T10:30:00Z",
+  "metrics": {
+    "relevance_score": 0.95,
+    "source_mapping_accuracy": 1.0,
+    "average_latency_ms": 250
+  },
+  "details": [
+    {
+      "query": "sample query 1",
+      "retrieved_chunks": [
+        {
+          "content": "retrieved content",
+          "source_url": "https://example.com/doc1",
+          "similarity_score": 0.85
+        }
+      ],
+      "relevance_met": true,
+      "source_mapping_correct": true
+    }
+  ]
+}
+```
+
+#### 4. POST /validate/performance
+Validates retrieval latency and performance metrics
+
+**Request:**
+```json
+{
+  "collection_name": "rag-embeddings",
+  "concurrent_requests": 100,
+  "test_duration_seconds": 60,
+  "queries": ["performance test query"]
+}
+```
+
+**Response:**
+```json
+{
+  "validation_id": "uuid",
+  "status": "pass|fail|partial",
+  "timestamp": "2025-12-19T10:30:00Z",
+  "metrics": {
+    "p95_latency_ms": 350,
+    "p99_latency_ms": 450,
+    "requests_per_second": 25.5,
+    "success_rate": 0.99
+  },
+  "details": {
+    "total_requests": 1530,
+    "successful_requests": 1515,
+    "failed_requests": 15,
+    "latency_percentiles": {
+      "p50": 120,
+      "p95": 350,
+      "p99": 450
+    }
+  }
+}
+```
+
+#### 5. GET /validation/report/{validation_id}
+Retrieves a specific validation report
+
+**Response:**
+```json
+{
+  "report_id": "uuid",
+  "validation_type": "embedding|storage|retrieval|performance|comprehensive",
+  "status": "pass|fail|partial",
+  "timestamp": "2025-12-19T10:30:00Z",
+  "summary": {
+    "total_tests": 100,
+    "passed_tests": 98,
+    "failed_tests": 2,
+    "success_rate": 0.98
+  },
+  "components": {
+    "embedding": {"status": "pass", "success_rate": 0.99},
+    "storage": {"status": "pass", "success_rate": 0.99},
+    "retrieval": {"status": "pass", "success_rate": 0.95},
+    "performance": {"status": "pass", "p95_latency_ms": 350}
+  },
+  "errors": [],
+  "warnings": [],
+  "recommendations": []
+}
+```
