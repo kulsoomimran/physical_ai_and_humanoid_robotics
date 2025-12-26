@@ -7,7 +7,7 @@
 
 ## Technical Context
 
-This plan outlines the implementation of a RAG (Retrieval Augmented Generation) system that ingests content from published Docusaurus books, generates embeddings using Cohere, and stores them in Qdrant vector database. The system will be implemented in a single `main.py` file with the following key functions:
+This plan outlines the implementation of a RAG (Retrieval Augmented Generation) system that ingests content from published Docusaurus books, generates embeddings using Cohere, and stores them in Qdrant vector database. The system will be implemented in a single `ingestion.py` file with the following key functions:
 - `get_all_urls`: Retrieve all URLs from the target Docusaurus site
 - `extract_text_from_url`: Extract clean text content from each URL
 - `chunk_text`: Split content into logical sections suitable for embeddings
@@ -136,7 +136,7 @@ None identified - this implementation aligns with project principles.
 
 ### API Contract
 
-The main.py file will expose a single entry point that orchestrates the entire ingestion process:
+The ingestion.py file will expose a single entry point that orchestrates the entire ingestion process:
 
 ```python
 def main():
@@ -150,7 +150,7 @@ def main():
 
 1. Install dependencies: `pip install cohere qdrant-client requests beautifulsoup4 python-dotenv`
 2. Configure environment variables in `.env` (COHERE_API_KEY, QDRANT_URL, QDRANT_API_KEY)
-3. Run the ingestion: `python main.py`
+3. Run the ingestion: `python ingestion.py`
 4. Verify successful ingestion in Qdrant dashboard
 
 ## Phase 2: Implementation Strategy

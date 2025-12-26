@@ -16,10 +16,10 @@ links:
   adr: null
   pr: null
 files:
-  - ../../backend/main.py
+  - ../../backend/ingestion.py
   - ../../specs/2-website-ingestion/tasks.md
 tests:
-  - ../../backend/main.py
+  - ../../backend/ingestion.py
 ---
 
 ## Prompt
@@ -47,8 +47,8 @@ The implementation now includes robust configuration validation and utility func
 ## Outcome
 
 - ✅ Impact: Added robust configuration validation and utility functions for the RAG system
-- 🧪 Tests: main.py successfully runs with enhanced validation and error handling
-- 📁 Files: Updated backend/main.py with utility functions and validation, updated tasks.md
+- 🧪 Tests: ingestion.py successfully runs with enhanced validation and error handling
+- 📁 Files: Updated backend/ingestion.py with utility functions and validation, updated tasks.md
 - 🔁 Next prompts: Ready to proceed with Phase 3 (User Story 1 - Docusaurus Content Ingestion)
 - 🧠 Reflection: The foundational components provide a solid base for implementing user stories with proper validation
 

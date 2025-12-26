@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p content/src/components/Chatbot)",
+      "Bash(dir \"D:\\\\Kulsoom\\\\Hackathon\\\\first_hackathon\\\\specs\" /s)",
+      "Bash(findstr chatbot)",
+      "Bash(npm install rehype-highlight highlight.js)",
+      "Bash(dir \"D:\\\\Kulsoom\\\\Hackathon\\\\first_hackathon\\\\content\\\\src\\\\components\\\\Chatbot\")"
+    ]
+  }
+}

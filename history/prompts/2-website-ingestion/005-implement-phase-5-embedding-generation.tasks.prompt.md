@@ -16,7 +16,7 @@ links:
   adr: null
   pr: null
 files:
-  - ../../backend/main.py
+  - ../../backend/ingestion.py
   - ../../specs/2-website-ingestion/tasks.md
   - ../../backend/test_embedding.py
 tests:
@@ -60,7 +60,7 @@ The implementation successfully handles embedding generation and vector storage 
 
 - ✅ Impact: Embedding generation and vector storage functionality fully implemented
 - 🧪 Tests: Functions tested successfully with Cohere API and Qdrant integration
-- 📁 Files: Updated backend/main.py with embedding functions, updated tasks.md, created test files
+- 📁 Files: Updated backend/ingestion.py with embedding functions, updated tasks.md, created test files
 - 🔁 Next prompts: Ready to proceed with Phase 6 (Polish & Cross-Cutting Concerns)
 - 🧠 Reflection: Implementation includes robust error handling and proper dimension matching
 

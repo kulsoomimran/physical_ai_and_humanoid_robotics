@@ -1,0 +1,53 @@
+# API Contract: RAG Chatbot Integration
+
+## Chat Endpoint
+
+### POST /chat
+
+**Description**: Send a user question to the RAG backend and receive a response.
+
+**Request**:
+```json
+{
+  "question": "string (required)",
+  "context": {
+    "selected_text": "string (optional)",
+    "page_url": "string (optional)",
+    "page_title": "string (optional)"
+  }
+}
+```
+
+**Response (Success)**:
+```json
+{
+  "id": "string",
+  "question": "string",
+  "answer": "string",
+  "source_documents": [
+    {
+      "title": "string",
+      "url": "string",
+      "content": "string"
+    }
+  ],
+  "timestamp": "datetime"
+}
+```
+
+**Response (Error)**:
+```json
+{
+  "error": "string",
+  "message": "string"
+}
+```
+
+**Headers**:
+- Content-Type: application/json
+- Accept: application/json
+
+**Status Codes**:
+- 200: Success
+- 400: Bad request (missing required fields)
+- 500: Internal server error

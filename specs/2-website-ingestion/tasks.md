@@ -26,12 +26,12 @@ This implementation follows an MVP-first approach where the core functionality i
 Initialize project structure and configure all necessary dependencies and clients.
 
 - [X] T001 Create backend directory structure for all backend components
-- [X] T002 Create backend/main.py file structure with class definition and imports
+- [X] T002 Create backend/ingestion.py file structure with class definition and imports
 - [X] T003 [P] Install and configure Cohere Python SDK dependency
 - [X] T004 [P] Install and configure Qdrant Python client dependency
 - [X] T005 [P] Install and configure requests and beautifulsoup4 dependencies
 - [X] T006 [P] Install and configure python-dotenv dependency
-- [X] T007 Configure environment variables loading in backend/main.py
+- [X] T007 Configure environment variables loading in backend/ingestion.py
 - [X] T008 Initialize Cohere client with API key from environment
 - [X] T009 Initialize Qdrant client with URL and API key from environment
 
@@ -40,7 +40,7 @@ Initialize project structure and configure all necessary dependencies and client
 ### Goal
 Create the foundational components that all user stories depend on.
 
-- [X] T010 Create WebsiteIngestionPipeline class with proper initialization in backend/main.py
+- [X] T010 Create WebsiteIngestionPipeline class with proper initialization in backend/ingestion.py
 - [X] T011 Implement error logging configuration for the pipeline
 - [X] T012 Define configuration parameters for chunk size, overlap, and batch processing
 - [X] T013 Create utility functions for handling environment variables and configuration
@@ -53,11 +53,11 @@ Backend engineers need to crawl and ingest published Docusaurus book URLs to mak
 ### Independent Test Criteria
 Can be fully tested by providing a Docusaurus URL and verifying that content is successfully extracted and stored in a structured format, delivering searchable documentation content.
 
-- [X] T014 [US1] Implement get_all_urls(base_url) function in backend/main.py to crawl Docusaurus site
+- [X] T014 [US1] Implement get_all_urls(base_url) function in backend/ingestion.py to crawl Docusaurus site
 - [X] T015 [US1] Add URL validation and filtering logic to exclude non-documentation pages
 - [X] T016 [US1] Implement breadth-first search algorithm for URL discovery
 - [X] T017 [US1] Add error handling for inaccessible URLs during crawling
-- [X] T018 [US1] Implement extract_text_from_url(url) function in backend/main.py to parse HTML content
+- [X] T018 [US1] Implement extract_text_from_url(url) function in backend/ingestion.py to parse HTML content
 - [X] T019 [US1] Add Docusaurus-specific CSS selectors for content extraction
 - [X] T020 [US1] Implement HTML cleaning to remove navigation, headers, and footers
 - [X] T021 [US1] Add page title extraction functionality
@@ -74,7 +74,7 @@ AI engineers need to preprocess and chunk the ingested content into appropriatel
 ### Independent Test Criteria
 Can be tested by taking raw content and verifying that it's split into logical chunks of appropriate sizes, delivering better retrieval results.
 
-- [X] T026 [US2] Implement chunk_text(text_content, chunk_size=1000, overlap=100) function in backend/main.py
+- [X] T026 [US2] Implement chunk_text(text_content, chunk_size=1000, overlap=100) function in backend/ingestion.py
 - [X] T027 [US2] Add recursive character splitting with sentence boundary detection
 - [X] T028 [US2] Implement overlap logic to maintain context between chunks
 - [X] T029 [US2] Add boundary detection for sentence endings (., !, ?, ;)
@@ -94,15 +94,15 @@ Engineers need to generate vector embeddings from the preprocessed content and s
 ### Independent Test Criteria
 Can be tested by generating embeddings for sample content and verifying they can be stored and retrieved from the vector database, delivering fast similarity search capability.
 
-- [X] T037 [US3] Implement embed(text_chunks) function with Cohere API integration in backend/main.py
+- [X] T037 [US3] Implement embed(text_chunks) function with Cohere API integration in backend/ingestion.py
 - [X] T038 [US3] Add batching logic for Cohere API calls (max 96 texts per request)
 - [X] T039 [US3] Implement rate limiting and retry logic for Cohere API
 - [X] T040 [US3] Add error handling for Cohere API failures
 - [X] T041 [US3] Configure Cohere embedding model (embed-multilingual-v2.0)
-- [X] T042 [US3] Implement create_collection(collection_name="rag-embeddings") function in backend/main.py
+- [X] T042 [US3] Implement create_collection(collection_name="rag-embeddings") function in backend/ingestion.py
 - [X] T043 [US3] Configure Qdrant collection with 768-dimensional vectors
 - [X] T044 [US3] Set cosine similarity distance function for the collection
-- [X] T045 [US3] Implement save_chunk_to_qdrant(chunk_data, embedding) function in backend/main.py
+- [X] T045 [US3] Implement save_chunk_to_qdrant(chunk_data, embedding) function in backend/ingestion.py
 - [X] T046 [US3] Generate unique UUID for each vector record in Qdrant
 - [X] T047 [US3] Store content and metadata in Qdrant payload
 - [X] T048 [US3] Add error handling for Qdrant storage failures

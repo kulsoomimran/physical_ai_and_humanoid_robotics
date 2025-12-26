@@ -50,6 +50,29 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    // Plugin to expose environment variables to client
+    async function(context) {
+      return {
+        name: 'custom-webpack-config',
+        configureWebpack(config, isServer) {
+          return {
+            resolve: {
+              fallback: {
+                process: require.resolve('process/browser'),
+              },
+            },
+            plugins: [
+              new (require('webpack')).ProvidePlugin({
+                process: 'process/browser',
+              }),
+            ],
+          };
+        },
+      };
+    },
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/robotics-social-card.jpg',

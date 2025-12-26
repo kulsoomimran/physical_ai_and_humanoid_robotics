@@ -16,12 +16,12 @@ links:
   adr: null
   pr: null
 files:
-  - ../../backend/main.py
+  - ../../backend/ingestion.py
   - ../../backend/.env
   - ../../requirements.txt
   - ../../specs/2-website-ingestion/tasks.md
 tests:
-  - ../../backend/main.py
+  - ../../backend/ingestion.py
 ---
 
 ## Prompt
@@ -35,20 +35,20 @@ Implement all Phase 1 setup tasks for the RAG chatbot backend. Focus only on ini
 Successfully implemented all Phase 1 setup tasks for the RAG chatbot backend:
 
 1. Created the backend directory structure
-2. Created the main.py file with WebsiteIngestionPipeline class structure
+2. Created the ingestion.py file with WebsiteIngestionPipeline class structure
 3. Created a virtual environment in the backend directory
 4. Installed all required dependencies (cohere, qdrant-client, requests, beautifulsoup4, python-dotenv)
 5. Created a .env file with all necessary environment variables
-6. Updated main.py to properly load environment variables and initialize both Cohere and Qdrant clients
+6. Updated ingestion.py to properly load environment variables and initialize both Cohere and Qdrant clients
 7. Marked all Phase 1 tasks in tasks.md as completed [X]
 
-The setup was tested by running main.py, which successfully initialized both clients and confirmed that all dependencies are properly configured.
+The setup was tested by running ingestion.py, which successfully initialized both clients and confirmed that all dependencies are properly configured.
 
 ## Outcome
 
 - ✅ Impact: Backend project structure initialized with all required dependencies and client configurations
-- 🧪 Tests: main.py successfully runs and initializes Cohere and Qdrant clients
-- 📁 Files: Created backend directory, main.py, .env, requirements.txt, and updated tasks.md
+- 🧪 Tests: ingestion.py successfully runs and initializes Cohere and Qdrant clients
+- 📁 Files: Created backend directory, ingestion.py, .env, requirements.txt, and updated tasks.md
 - 🔁 Next prompts: Ready to proceed with Phase 2 (Foundational Components) and Phase 3 (User Story 1 - Docusaurus Content Ingestion)
 - 🧠 Reflection: Dependencies were already installed system-wide, which simplified the setup process
 

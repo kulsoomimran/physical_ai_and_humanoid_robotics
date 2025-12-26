@@ -16,7 +16,7 @@ links:
   adr: null
   pr: null
 files:
-  - ../../backend/main.py
+  - ../../backend/ingestion.py
   - ../../specs/2-website-ingestion/tasks.md
   - ../../backend/test_phase3.py
   - ../../backend/simple_test.py
@@ -58,7 +58,7 @@ The implementation successfully handles Docusaurus site crawling and content ext
 
 - ✅ Impact: Docusaurus content ingestion functionality fully implemented
 - 🧪 Tests: Functions tested with multiple sites confirming proper functionality
-- 📁 Files: Updated backend/main.py with ingestion functions, updated tasks.md, created test files
+- 📁 Files: Updated backend/ingestion.py with ingestion functions, updated tasks.md, created test files
 - 🔁 Next prompts: Ready to proceed with Phase 4 (Content Preprocessing and Chunking)
 - 🧠 Reflection: Implementation handles various Docusaurus layouts and includes robust error handling
 

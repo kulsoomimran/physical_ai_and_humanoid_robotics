@@ -1,0 +1,152 @@
+openapi: 3.0.0
+info:
+  title: RAG Retrieval Validation API
+  description: API for validating RAG retrieval pipeline functionality
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Local validation server
+
+paths:
+  /validate-query:
+    post:
+      summary: Validate a single query against the RAG retrieval system
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryValidationRequest'
+      responses:
+        '200':
+          description: Validation results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryValidationResponse'
+        '400':
+          description: Invalid request
+        '500':
+          description: Server error during validation
+
+  /validate-all:
+    get:
+      summary: Run comprehensive validation on the entire retrieval pipeline
+      responses:
+        '200':
+          description: Complete validation report
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationReport'
+        '500':
+          description: Server error during validation
+
+components:
+  schemas:
+    QueryValidationRequest:
+      type: object
+      required:
+        - query
+        - top_k
+      properties:
+        query:
+          type: string
+          description: The query text to validate retrieval for
+          example: "What is humanoid robotics?"
+        top_k:
+          type: integer
+          description: Number of top results to retrieve
+          default: 5
+          minimum: 1
+          maximum: 100
+        collection_name:
+          type: string
+          description: Name of the Qdrant collection to search in
+          default: "book_chunks"
+
+    RetrievedChunk:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the chunk
+        text:
+          type: string
+          description: The actual text content of the chunk
+        score:
+          type: number
+          description: Similarity score from the retrieval process
+          format: float
+          minimum: 0
+          maximum: 1
+        metadata:
+          $ref: '#/components/schemas/SourceMetadata'
+
+    SourceMetadata:
+      type: object
+      properties:
+        source_url:
+          type: string
+          description: URL of the original document
+        document_id:
+          type: string
+          description: Unique identifier of the source document
+        chunk_index:
+          type: integer
+          description: Position of the chunk in the original document
+        page_number:
+          type: integer
+          description: Page number if applicable
+        section_title:
+          type: string
+          description: Title of the section containing the chunk
+
+    QueryValidationResponse:
+      type: object
+      properties:
+        query_id:
+          type: string
+          description: Unique identifier for the query
+        retrieved_chunks:
+          type: array
+          items:
+            $ref: '#/components/schemas/RetrievedChunk'
+        is_valid:
+          type: boolean
+          description: Whether the validation passed
+        error_message:
+          type: string
+          description: Description of any validation errors
+        validation_timestamp:
+          type: string
+          format: date-time
+          description: When validation was performed
+
+    ValidationReport:
+      type: object
+      properties:
+        report_id:
+          type: string
+          description: Unique identifier for the report
+        total_queries:
+          type: integer
+          description: Number of queries tested
+        successful_queries:
+          type: integer
+          description: Number of queries that passed validation
+        failed_queries:
+          type: integer
+          description: Number of queries that failed validation
+        success_rate:
+          type: number
+          format: float
+          description: Percentage of successful queries
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/QueryValidationResponse'
+        execution_time:
+          type: number
+          format: float
+          description: Time taken to complete validation in seconds

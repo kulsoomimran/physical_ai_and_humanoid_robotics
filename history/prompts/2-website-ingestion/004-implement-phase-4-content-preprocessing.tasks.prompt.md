@@ -16,7 +16,7 @@ links:
   adr: null
   pr: null
 files:
-  - ../../backend/main.py
+  - ../../backend/ingestion.py
   - ../../specs/2-website-ingestion/tasks.md
   - ../../backend/test_chunking.py
 tests:
@@ -57,7 +57,7 @@ The implementation successfully handles content preprocessing with intelligent c
 
 - ✅ Impact: Content preprocessing and intelligent chunking functionality fully implemented
 - 🧪 Tests: Comprehensive test suite validates all chunking functionality
-- 📁 Files: Updated backend/main.py with chunking functions, updated tasks.md, created test files
+- 📁 Files: Updated backend/ingestion.py with chunking functions, updated tasks.md, created test files
 - 🔁 Next prompts: Ready to proceed with Phase 5 (Embedding Generation and Storage)
 - 🧠 Reflection: Implementation balances semantic coherence with size constraints using boundary detection
 

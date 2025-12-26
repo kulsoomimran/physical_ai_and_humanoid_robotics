@@ -7,7 +7,7 @@ surface: agent
 model: Claude Haiku 4.5
 feature: "Physical AI & Humanoid Robotics"
 branch: main
-user: user
+user: Kulsoom
 command: "/sp.constitution"
 labels: ["constitution", "rag", "chatbot", "architecture"]
 links:
