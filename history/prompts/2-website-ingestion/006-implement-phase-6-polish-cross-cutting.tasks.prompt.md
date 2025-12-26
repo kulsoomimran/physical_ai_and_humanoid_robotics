@@ -16,7 +16,7 @@ links:
   adr: null
   pr: null
 files:
-  - ../../backend/main.py
+  - ../../backend/ingestion.py
   - ../../backend/README.md
   - ../../backend/final_integration_test.py
   - ../../specs/2-website-ingestion/tasks.md
@@ -52,7 +52,7 @@ All functions now have enhanced error handling, progress tracking, and performan
 
 - ✅ Impact: Complete polish and production-readiness of the RAG chatbot pipeline
 - 🧪 Tests: All integration tests pass including error handling and full pipeline functionality
-- 📁 Files: Updated main.py with enhancements, created README.md documentation, added integration tests
+- 📁 Files: Updated ingestion.py with enhancements, created README.md documentation, added integration tests
 - 🔁 Next prompts: Pipeline is complete and ready for deployment
 - 🧠 Reflection: Implementation includes robust error handling, performance optimization, and user-friendly CLI
 

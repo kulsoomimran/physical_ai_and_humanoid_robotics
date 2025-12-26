@@ -654,25 +654,173 @@ a:hover {
 /* Custom font loading - Inter font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Chatbot positioning */
-.chatbot-fixed {
+/* Chatbot toggle button */
+.chatbot-toggle-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+  color: white;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(126, 34, 206, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.chatbot-toggle-button:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 8px 20px rgba(126, 34, 206, 0.6);
+}
+
+.chatbot-toggle-button:active {
+  transform: scale(0.95);
+}
+
+.chatbot-toggle-button.hidden {
+  display: none;
+}
+
+/* Pulse animation for the toggle button */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(126, 34, 206, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(126, 34, 206, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(126, 34, 206, 0);
+  }
+}
+
+/* Chatbot overlay positioning */
+.chatbot-overlay {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 1000;
   width: 400px;
   height: 600px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    0 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
   overflow: hidden;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease, height 0.3s ease;
+}
+
+.chatbot-overlay.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  display: flex;
+}
+
+.chatbot-overlay.closed {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  display: none;
+}
+
+/* Chatbot header bar */
+.chatbot-header-bar {
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+  color: var(--ifm-color-gray-0);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  z-index: 1001;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-title {
+  font-size: 1.2em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chatbot-title::before {
+  content: "💬";
+  font-size: 1.1em;
+}
+
+.chatbot-close-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: var(--ifm-color-gray-0);
+  font-size: 1.3em;
+  cursor: pointer;
+  padding: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+.chatbot-close-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* Dark mode enhancements for chatbot elements */
+[data-theme='dark'] .chatbot-overlay {
+  background: var(--ifm-color-gray-900);
+  color: var(--ifm-color-gray-100);
+}
+
+[data-theme='dark'] .chatbot-header-bar {
+  background: linear-gradient(135deg, var(--ifm-color-primary-light), var(--ifm-color-primary));
+  color: var(--ifm-color-gray-900);
+}
+
+[data-theme='dark'] .chatbot-close-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--ifm-color-gray-900);
+}
+
+[data-theme='dark'] .chatbot-close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
-  .chatbot-fixed {
-    width: calc(100% - 40px);
+  .chatbot-toggle-button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    bottom: 80px; /* Adjust for mobile browser navigation */
+  }
+
+  .chatbot-overlay {
+    width: calc(100% - 30px);
     height: 50vh;
-    bottom: 70px;
-    right: 20px;
+    bottom: 100px;
+    right: 15px;
+    left: 15px;
+  }
+
+  [data-theme='dark'] .chatbot-overlay {
+    height: 50vh;
   }
 }

@@ -7,7 +7,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from main import WebsiteIngestionPipeline
+from backend.ingestion import WebsiteIngestionPipeline
 
 def test_complete_pipeline():
     """Test the complete pipeline: URL discovery -> Content extraction -> Chunking -> Embedding -> Storage"""

@@ -7,7 +7,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from main import WebsiteIngestionPipeline
+from backend.ingestion import WebsiteIngestionPipeline
 
 def test_book_pipeline():
     """Test the complete pipeline with the actual book URL"""

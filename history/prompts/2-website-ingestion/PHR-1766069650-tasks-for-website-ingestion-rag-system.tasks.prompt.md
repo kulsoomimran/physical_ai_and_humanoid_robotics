@@ -50,7 +50,7 @@ Successfully created a detailed task breakdown for the RAG ingestion system with
 No tests created as this was a task planning phase
 
 ## NEXT PROMPTS
-1. "Implement the backend directory structure and main.py file"
+1. "Implement the backend directory structure and ingestion.py file"
 2. "Implement the get_all_urls function in the backend"
 3. "Implement the content extraction functionality"
 

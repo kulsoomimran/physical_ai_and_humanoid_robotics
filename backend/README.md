@@ -55,16 +55,16 @@ The pipeline supports various command-line options:
 
 ```bash
 # Process a single URL
-python main.py --url "https://example.com/page"
+python ingestion.py --url "https://example.com/page"
 
 # Crawl and process an entire Docusaurus site
-python main.py --base-url "https://docusaurus-site.com"
+python ingestion.py --base-url "https://docusaurus-site.com"
 
 # Process with custom configuration
-python main.py --base-url "https://docusaurus-site.com" --chunk-size 1500 --overlap 200 --batch-size 5
+python ingestion.py --base-url "https://docusaurus-site.com" --chunk-size 1500 --overlap 200 --batch-size 5
 
 # Enable verbose logging
-python main.py --base-url "https://docusaurus-site.com" --verbose
+python ingestion.py --base-url "https://docusaurus-site.com" --verbose
 ```
 
 ### Available Options
@@ -158,3 +158,74 @@ The system provides detailed logging at different levels. Use the `--verbose` fl
 | BATCH_SIZE | Batch size for API calls | 96 |
 | COLLECTION_NAME | Qdrant collection name | rag_chatbot |
 | REQUEST_TIMEOUT | Request timeout in seconds | 10 |
+
+## RAG Chatbot API Usage
+
+The backend also includes a FastAPI-based API for interacting with the RAG agent. Here's how to use it:
+
+### Starting the API Server
+
+```bash
+cd backend
+uvicorn main:app --reload --port 8000
+```
+
+### API Endpoints
+
+#### POST /chat
+Process a user question through the RAG agent and get a response.
+
+**Request Body:**
+```json
+{
+  "question": "What are the key components of a humanoid robot?",
+  "selected_text": "Optional context to provide additional information...",
+  "thread_id": "Optional thread identifier for conversation context",
+  "metadata": {
+    "user_id": "Optional metadata"
+  }
+}
+```
+
+**Response:**
+```json
+{
+  "response": "The key components of a humanoid robot include sensors, actuators, control systems, and a physical structure...",
+  "thread_id": "thread identifier",
+  "metadata": {
+    "source": "rag_agent"
+  },
+  "timestamp": "2025-12-26T10:00:00Z"
+}
+```
+
+#### GET /health
+Check the health status of the service.
+
+**Response:**
+```json
+{
+  "status": "healthy",
+  "timestamp": "2025-12-26T10:00:00Z",
+  "version": "1.0.0"
+}
+```
+
+### Example Usage with curl
+
+```bash
+curl -X POST "https://kulsoomimran-rag-chatbot.hf.space/chat" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "question": "What are the main components of a humanoid robot?",
+    "selected_text": "Humanoid robots typically have a head, torso, arms, and legs..."
+  }'
+```
+
+### API Features
+
+- **Input Validation**: All requests are validated according to the defined schemas
+- **Error Handling**: Proper HTTP status codes and error responses
+- **CORS Support**: Cross-origin requests are allowed
+- **Thread Management**: Conversation context can be maintained with thread_id
+- **Logging**: Comprehensive logging for debugging and monitoring

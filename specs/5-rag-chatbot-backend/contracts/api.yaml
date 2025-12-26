@@ -1,0 +1,157 @@
+openapi: 3.0.0
+info:
+  title: RAG Chatbot Backend API
+  description: API for interacting with a RAG agent through a FastAPI backend
+  version: 1.0.0
+servers:
+  - url: https://kulsoomimran-rag-chatbot.hf.space/
+    description: Production server
+  - url: http://localhost:8000
+    description: Local development server
+
+paths:
+  /chat:
+    post:
+      summary: Process a user question through the RAG agent
+      description: Accepts a question and optional selected text, processes it through the RAG agent, and returns the response
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+      responses:
+        '200':
+          description: Successful response from the RAG agent
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+        '400':
+          description: Bad request - invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /health:
+    get:
+      summary: Check the health status of the service
+      description: Returns the current health status of the backend service
+      responses:
+        '200':
+          description: Health status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthCheck'
+        '500':
+          description: Service is unhealthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    ChatRequest:
+      type: object
+      required:
+        - question
+      properties:
+        question:
+          type: string
+          description: The user's question or query
+          example: "What are the key components of a humanoid robot?"
+          minLength: 1
+          maxLength: 2000
+        selected_text:
+          type: string
+          description: Optional selected text to provide additional context
+          example: "Humanoid robots typically have a head, torso, arms, and legs..."
+          maxLength: 10000
+        thread_id:
+          type: string
+          description: Optional thread ID to maintain conversation context
+          example: "thread_abc123"
+          pattern: "^[a-zA-Z0-9_-]+$"
+        metadata:
+          type: object
+          description: Additional metadata for the request
+          example: {"user_id": "user123"}
+
+    ChatResponse:
+      type: object
+      required:
+        - response
+        - thread_id
+        - timestamp
+      properties:
+        response:
+          type: string
+          description: The agent's response to the question
+          example: "The key components of a humanoid robot include sensors, actuators, control systems, and a physical structure..."
+          minLength: 1
+          maxLength: 10000
+        thread_id:
+          type: string
+          description: ID of the conversation thread
+          example: "thread_abc123"
+          pattern: "^[a-zA-Z0-9_-]+$"
+        metadata:
+          type: object
+          description: Additional metadata about the response
+          example: {"source_documents": ["doc1.pdf", "doc2.pdf"]}
+        timestamp:
+          type: string
+          format: date-time
+          description: ISO 8601 formatted timestamp
+          example: "2025-12-26T10:00:00Z"
+
+    HealthCheck:
+      type: object
+      required:
+        - status
+        - timestamp
+      properties:
+        status:
+          type: string
+          enum: [healthy, unhealthy]
+          description: Health status of the service
+          example: "healthy"
+        timestamp:
+          type: string
+          format: date-time
+          description: ISO 8601 formatted timestamp
+          example: "2025-12-26T10:00:00Z"
+        version:
+          type: string
+          description: API version information
+          example: "1.0.0"
+
+    Error:
+      type: object
+      required:
+        - error
+        - code
+      properties:
+        error:
+          type: string
+          description: Error message
+          example: "Invalid input: question is required"
+          minLength: 1
+          maxLength: 500
+        code:
+          type: string
+          description: Error code
+          example: "400"
+        details:
+          type: object
+          description: Additional error details
+          example: {"field": "question", "reason": "required"}

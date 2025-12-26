@@ -35,7 +35,7 @@ tests: []
 - Chunk the text into logical sections suitable for embeddings
 - Generate embeddings with Cohere
 - Insert embeddings into Qdrant along with relevant metadata
-Generate embeddings and upsert into Qdrant with metadata only in the one file main.py system design (get_all_urls,extract_text_from_url,chunk_text,embed,create_collection,name rag-embedding save_chunk_to_qdrant and execute in  last main function here is deploy link : https://ai-and-humanoid-robotics-book.vercel.app/
+Generate embeddings and upsert into Qdrant with metadata only in the one file ingestion.py system design (get_all_urls,extract_text_from_url,chunk_text,embed,create_collection,name rag-embedding save_chunk_to_qdrant and execute in  last main function here is deploy link : https://ai-and-humanoid-robotics-book.vercel.app/
 
 ## RESPONSE TEXT
 Created a comprehensive implementation plan for the RAG system that includes all required components: URL retrieval from Docusaurus site, content extraction, text chunking, Cohere embedding generation, and Qdrant vector storage. The plan details dependencies, configuration, function breakdowns, error handling, and architecture decisions.
@@ -51,7 +51,7 @@ No tests created as this was a planning phase
 
 ## NEXT PROMPTS
 1. "Implement the RAG ingestion pipeline based on the plan"
-2. "Create the main.py file with all required functions"
+2. "Create the ingestion.py file with all required functions"
 3. "Test the URL retrieval functionality with the target Docusaurus site"
 
 ## REFLECTION NOTE
