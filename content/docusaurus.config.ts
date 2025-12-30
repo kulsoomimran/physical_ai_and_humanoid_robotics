@@ -104,6 +104,10 @@ const config: Config = {
           position: 'left',
           label: 'Book',
         },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
       ],
       hideOnScroll: true,
     },

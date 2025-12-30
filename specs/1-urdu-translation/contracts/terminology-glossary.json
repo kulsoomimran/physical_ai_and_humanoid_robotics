@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "language": "Urdu",
+    "date_created": "2025-12-28",
+    "date_updated": "2025-12-28",
+    "maintained_by": "Physical AI & Humanoid Robotics Team",
+    "total_terms": 45
+  },
+  "terms": [
+    {
+      "id": "core-001",
+      "term_en": "API",
+      "term_ur": "اے پی آئی",
+      "category": "core-concepts",
+      "definition_ur": "پروگراموں کے درمیان رابطہ کا طریقہ",
+      "usage_example": "REST API استعمال کریں",
+      "approved": true,
+      "approved_by": "System",
+      "approved_at": "2025-12-28T00:00:00Z",
+      "notes": "Transliterated standard",
+      "frequency": "high"
+    },
+    {"id": "prog-001", "term_en": "variable", "term_ur": "متغیر", "category": "programming-basics", "definition_ur": "ڈیٹا رکھنے والا حصہ", "usage_example": "متغیر بنائیں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Standard translation", "frequency": "high"},
+    {"id": "prog-002", "term_en": "function", "term_ur": "فنکشن", "category": "programming-basics", "definition_ur": "دوبارہ استعمال کے لیے کوڈ", "usage_example": "فنکشن لکھیں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"},
+    {"id": "prog-003", "term_en": "loop", "term_ur": "لوپ", "category": "programming-basics", "definition_ur": "بار بار چلنے والا کوڈ", "usage_example": "for لوپ استعمال کریں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"},
+    {"id": "prog-004", "term_en": "condition", "term_ur": "شرط", "category": "programming-basics", "definition_ur": "اگر...تو کوڈ", "usage_example": "شرط چیک کریں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Standard translation", "frequency": "high"},
+    {"id": "prog-005", "term_en": "array", "term_ur": "سرنی", "category": "programming-basics", "definition_ur": "ترتیب سے ڈیٹا رکھنا", "usage_example": "سرنی بنائیں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Standard translation", "frequency": "high"},
+    {"id": "data-001", "term_en": "database", "term_ur": "ڈیٹا بیس", "category": "data-structures", "definition_ur": "منظم ڈیٹا کا ذخیرہ", "usage_example": "ڈیٹا بیس استعمال کریں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"},
+    {"id": "data-002", "term_en": "table", "term_ur": "ٹیبل", "category": "data-structures", "definition_ur": "قطار اور ستون کا ڈیٹا", "usage_example": "ٹیبل بنائیں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"},
+    {"id": "oop-001", "term_en": "class", "term_ur": "کلاس", "category": "oop", "definition_ur": "چیزوں کا نقشہ", "usage_example": "کلاس بنائیں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"},
+    {"id": "oop-002", "term_en": "object", "term_ur": "آبجیکٹ", "category": "oop", "definition_ur": "کلاس کی مثال", "usage_example": "آبجیکٹ بنائیں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"},
+    {"id": "oop-003", "term_en": "method", "term_ur": "میتھڈ", "category": "oop", "definition_ur": "کلاس میں فنکشن", "usage_example": "میتھڈ کال کریں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"},
+    {"id": "robot-001", "term_en": "robot", "term_ur": "روبوٹ", "category": "robotics", "definition_ur": "خود کار مشین", "usage_example": "روبوٹ بنائیں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Standard", "frequency": "high"},
+    {"id": "robot-002", "term_en": "actuator", "term_ur": "ایکچویٹر", "category": "robotics", "definition_ur": "حرکت کرنے والا حصہ", "usage_example": "ایکچویٹر بنائیں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"},
+    {"id": "robot-003", "term_en": "sensor", "term_ur": "سینسر", "category": "robotics", "definition_ur": "ماحول کو محسوس کرنا", "usage_example": "سینسر استعمال کریں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"},
+    {"id": "ros-001", "term_en": "ROS 2", "term_ur": "ROS 2", "category": "ros", "definition_ur": "روبوٹ آپریٹنگ سسٹم", "usage_example": "ROS 2 استعمال کریں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Keep as-is", "frequency": "high"},
+    {"id": "ros-002", "term_en": "node", "term_ur": "نوڈ", "category": "ros", "definition_ur": "ROS میں ایک پروگرام", "usage_example": "نوڈ بنائیں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"},
+    {"id": "ros-003", "term_en": "topic", "term_ur": "ٹاپک", "category": "ros", "definition_ur": "پیغامات بھیجنے کا راستہ", "usage_example": "ٹاپک سبسکرائب کریں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"},
+    {"id": "ros-004", "term_en": "service", "term_ur": "سروس", "category": "ros", "definition_ur": "درخواست اور جواب", "usage_example": "سروس کال کریں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"},
+    {"id": "sim-001", "term_en": "Gazebo", "term_ur": "Gazebo", "category": "simulation", "definition_ur": "روبوٹ کی نقل کا سافٹ ویئر", "usage_example": "Gazebo میں نقل بنائیں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Keep as-is", "frequency": "high"},
+    {"id": "sim-002", "term_en": "Unity", "term_ur": "Unity", "category": "simulation", "definition_ur": "گیم بنانے کا پلیٹ فارم", "usage_example": "Unity استعمال کریں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Keep as-is", "frequency": "medium"},
+    {"id": "ai-001", "term_en": "machine learning", "term_ur": "مشین لرننگ", "category": "ai-ml", "definition_ur": "کمپیوٹر کو سیکھنا", "usage_example": "مشین لرننگ استعمال کریں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"},
+    {"id": "ai-002", "term_en": "neural network", "term_ur": "اعصابی نیٹ ورک", "category": "ai-ml", "definition_ur": "دماغ جیسی ڈھانچہ", "usage_example": "اعصابی نیٹ ورک بنائیں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Standard translation", "frequency": "high"},
+    {"id": "ai-003", "term_en": "model", "term_ur": "ماڈل", "category": "ai-ml", "definition_ur": "سیکھا ہوا نتیجہ", "usage_example": "ماڈل بنائیں", "approved": true, "approved_by": "System", "approved_at": "2025-12-28T00:00:00Z", "notes": "Transliterated", "frequency": "high"}
+  ]
+}

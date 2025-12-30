@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import Translate, { translate } from '@docusaurus/Translate';
 
 import styles from './index.module.css';
 
@@ -94,14 +95,26 @@ function HomepageHeader() {
           <div className={clsx(styles.heroIcon, 'margin-bottom--lg')}>
             <RobotIcon />
           </div>
-          <Heading as="h1" className="hero__title">{siteConfig.title}</Heading>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <Heading as="h1" className="hero__title">
+            <Translate id="pages.index.title" description="The main title on the home page">
+              {siteConfig.title}
+            </Translate>
+          </Heading>
+          <p className="hero__subtitle">
+            <Translate id="pages.index.tagline" description="The tagline on the home page">
+              {siteConfig.tagline}
+            </Translate>
+          </p>
           <div className={styles.buttons}>
             <Link className="button button--secondary button--lg" to="/docs/intro">
-               Start Reading - Introduction
+              <Translate id="pages.index.button.startReading" description="The start reading button text on the home page">
+                Start Reading - Introduction
+              </Translate>
             </Link>
             <Link className="button button--outline button--secondary button--lg margin-left--md" to="/docs/intro#book-structure">
-              📚 Explore Modules
+              <Translate id="pages.index.button.exploreModules" description="The explore modules button text on the home page">
+                📚 Explore Modules
+              </Translate>
             </Link>
           </div>
         </div>
@@ -130,12 +143,55 @@ function Section({ icon, title, children }: { icon: ReactNode; title: string; ch
 
 function WhoThisBookIsFor() {
   return (
-    <Section icon={<RobotIcon />} title="Who This Book Is For">
+    <Section
+      icon={<RobotIcon />}
+      title={
+        <Translate id="pages.index.section.title.whoFor" description="The title for the who this book is for section on the home page">
+          Who This Book Is For
+        </Translate>
+      }
+    >
       <div className="row">
         {[
-          { icon: <AIIcon />, title: 'AI Researchers', desc: 'Understand AI systems embodied in physical systems.' },
-          { icon: <CodeIcon />, title: 'Robotics Engineers', desc: 'Integrate AI techniques into robotic systems.' },
-          { icon: <BrainIcon />, title: 'Graduate Students', desc: 'Comprehensive resource for robotics & AI studies.' },
+          {
+            icon: <AIIcon />,
+            title: (
+              <Translate id="pages.index.card.title.aiResearchers" description="The title for AI Researchers card">
+                AI Researchers
+              </Translate>
+            ),
+            desc: (
+              <Translate id="pages.index.card.content.aiResearchers" description="The content for AI Researchers card">
+                Understand AI systems embodied in physical systems.
+              </Translate>
+            )
+          },
+          {
+            icon: <CodeIcon />,
+            title: (
+              <Translate id="pages.index.card.title.roboticsEngineers" description="The title for Robotics Engineers card">
+                Robotics Engineers
+              </Translate>
+            ),
+            desc: (
+              <Translate id="pages.index.card.content.roboticsEngineers" description="The content for Robotics Engineers card">
+                Integrate AI techniques into robotic systems.
+              </Translate>
+            )
+          },
+          {
+            icon: <BrainIcon />,
+            title: (
+              <Translate id="pages.index.card.title.graduateStudents" description="The title for Graduate Students card">
+                Graduate Students
+              </Translate>
+            ),
+            desc: (
+              <Translate id="pages.index.card.content.graduateStudents" description="The content for Graduate Students card">
+                Comprehensive resource for robotics & AI studies.
+              </Translate>
+            )
+          },
         ].map((item, idx) => (
           <div key={idx} className="col col--4 margin-vert--md">
             <div className={clsx('card', styles.card)}>
@@ -152,16 +208,95 @@ function WhoThisBookIsFor() {
 
 function BookFeatures() {
   const features = [
-    { icon: <BookIcon />, title: "Comprehensive Coverage", description: "From ROS 2 fundamentals to Vision-Language-Action systems" },
-    { icon: <RobotIcon />, title: "Practical Implementation", description: "Hands-on exercises and code examples" },
-    { icon: <AIIcon />, title: "Cutting-Edge AI", description: "Latest techniques in embodied AI & robotics" },
-    { icon: <ChipIcon />, title: "Modern Frameworks", description: "NVIDIA Isaac, Gazebo, Unity & more" },
-    { icon: <CodeIcon />, title: "Code Examples", description: "Practical implementations for each concept" },
-    { icon: <BrainIcon />, title: "Embodied Intelligence", description: "How AI interacts with the physical world" },
+    {
+      icon: <BookIcon />,
+      title: (
+        <Translate id="pages.index.feature.title.comprehensiveCoverage" description="The title for Comprehensive Coverage feature">
+          Comprehensive Coverage
+        </Translate>
+      ),
+      description: (
+        <Translate id="pages.index.feature.content.comprehensiveCoverage" description="The content for Comprehensive Coverage feature">
+          From ROS 2 fundamentals to Vision-Language-Action systems
+        </Translate>
+      )
+    },
+    {
+      icon: <RobotIcon />,
+      title: (
+        <Translate id="pages.index.feature.title.practicalImplementation" description="The title for Practical Implementation feature">
+          Practical Implementation
+        </Translate>
+      ),
+      description: (
+        <Translate id="pages.index.feature.content.practicalImplementation" description="The content for Practical Implementation feature">
+          Hands-on exercises and code examples
+        </Translate>
+      )
+    },
+    {
+      icon: <AIIcon />,
+      title: (
+        <Translate id="pages.index.feature.title.cuttiungEdgeAI" description="The title for Cutting Edge AI feature">
+          Cutting-Edge AI
+        </Translate>
+      ),
+      description: (
+        <Translate id="pages.index.feature.content.cuttiungEdgeAI" description="The content for Cutting Edge AI feature">
+          Latest techniques in embodied AI & robotics
+        </Translate>
+      )
+    },
+    {
+      icon: <ChipIcon />,
+      title: (
+        <Translate id="pages.index.feature.title.modernFrameworks" description="The title for Modern Frameworks feature">
+          Modern Frameworks
+        </Translate>
+      ),
+      description: (
+        <Translate id="pages.index.feature.content.modernFrameworks" description="The content for Modern Frameworks feature">
+          NVIDIA Isaac, Gazebo, Unity & more
+        </Translate>
+      )
+    },
+    {
+      icon: <CodeIcon />,
+      title: (
+        <Translate id="pages.index.feature.title.codeExamples" description="The title for Code Examples feature">
+          Code Examples
+        </Translate>
+      ),
+      description: (
+        <Translate id="pages.index.feature.content.codeExamples" description="The content for Code Examples feature">
+          Practical implementations for each concept
+        </Translate>
+      )
+    },
+    {
+      icon: <BrainIcon />,
+      title: (
+        <Translate id="pages.index.feature.title.embodiedIntelligence" description="The title for Embodied Intelligence feature">
+          Embodied Intelligence
+        </Translate>
+      ),
+      description: (
+        <Translate id="pages.index.feature.content.embodiedIntelligence" description="The content for Embodied Intelligence feature">
+          How AI interacts with the physical world
+        </Translate>
+      )
+    },
   ];
 
   return (
-    <Section icon={<ChipIcon />} title="What You'll Learn">
+    <Section
+      icon={<ChipIcon />}
+      title={
+        <Translate id="pages.index.section.title.whatYouLearn" description="The title for the what you'll learn section on the home page">
+          What You'll Learn
+        </Translate>
+      }
+    >
       <div className="row">
         {features.map((feature, idx) => (
           <div key={idx} className="col col--4 margin-vert--md">
@@ -179,23 +314,61 @@ function BookFeatures() {
 
 function FinalCTA() {
   return (
-    <Section icon={<AIIcon />} title="Ready to Dive In?">
-      <p>Begin your journey into robotics & embodied AI. This book provides knowledge and tools to build the future.</p>
+    <Section
+      icon={<AIIcon />}
+      title={
+        <Translate id="pages.index.section.title.readyToDive" description="The title for the ready to dive in section on the home page">
+          Ready to Dive In?
+        </Translate>
+      }
+    >
+      <p>
+        <Translate id="pages.index.section.content.readyToDive" description="The content for the ready to dive in section on the home page">
+          Begin your journey into robotics & embodied AI. This book provides knowledge and tools to build the future.
+        </Translate>
+      </p>
       <div className={styles.buttons}>
-        <Link className="button button--primary button--lg" to="/docs/intro">Start Reading Now</Link>
+        <Link className="button button--primary button--lg" to="/docs/intro">
+          <Translate id="pages.index.button.startReading" description="The start reading button text on the home page">
+            Start Reading Now
+          </Translate>
+        </Link>
       </div>
     </Section>
   );
 }
 
 export default function Home(): ReactNode {
+  const title = translate({
+    id: 'pages.index.title',
+    message: 'Physical AI & Humanoid Robotics',
+    description: 'The main title on the home page'
+  });
+
+  const description = translate({
+    id: 'pages.index.tagline',
+    message: 'Comprehensive Guide to Physical AI and Humanoid Robotics',
+    description: 'The tagline on the home page'
+  });
+
   return (
-    <Layout title="Physical AI & Humanoid Robotics" description="Comprehensive Guide to Physical AI and Humanoid Robotics">
+    <Layout title={title} description={description}>
       <HomepageBackground />
       <HomepageHeader />
       <main>
-        <Section icon={<BookIcon />} title="Bridging the Gap Between AI and Physical Systems">
-          <p>This comprehensive guide explores the intersection of AI and robotics, focusing on how embodied systems learn, adapt, and interact with the physical world.</p>
+        <Section
+          icon={<BookIcon />}
+          title={
+            <Translate id="pages.index.section.title.bridgingGap" description="The title for the bridging gap section on the home page">
+              Bridging the Gap Between AI and Physical Systems
+            </Translate>
+          }
+        >
+          <p>
+            <Translate id="pages.index.section.content.bridgingGap" description="The content for the bridging gap section on the home page">
+              This comprehensive guide explores the intersection of AI and robotics, focusing on how embodied systems learn, adapt, and interact with the physical world.
+            </Translate>
+          </p>
         </Section>
         <WhoThisBookIsFor />
         <BookFeatures />
