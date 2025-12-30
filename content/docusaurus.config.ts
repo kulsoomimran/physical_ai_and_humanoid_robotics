@@ -27,12 +27,22 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // Internationalization configuration for English and Urdu
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ur'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en',
+      },
+      ur: {
+        label: 'اردو',
+        direction: 'rtl',
+        htmlLang: 'ur',
+      },
+    },
   },
 
   presets: [
@@ -93,6 +103,10 @@ const config: Config = {
           sidebarId: 'roboticsSidebar',
           position: 'left',
           label: 'Book',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
       ],
       hideOnScroll: true,

@@ -5,7 +5,20 @@
       "Bash(dir \"D:\\\\Kulsoom\\\\Hackathon\\\\first_hackathon\\\\specs\" /s)",
       "Bash(findstr chatbot)",
       "Bash(npm install rehype-highlight highlight.js)",
-      "Bash(dir \"D:\\\\Kulsoom\\\\Hackathon\\\\first_hackathon\\\\content\\\\src\\\\components\\\\Chatbot\")"
+      "Bash(dir \"D:\\\\Kulsoom\\\\Hackathon\\\\first_hackathon\\\\content\\\\src\\\\components\\\\Chatbot\")",
+      "Bash(npm run build:*)",
+      "Bash(npx docusaurus start --port 3000)",
+      "Bash(dir \"D:\\\\Kulsoom\\\\Hackathon\\\\HackathonI\\\\physical-ai-book\\\\content\\\\docs\\\\modules\\\\module2\")",
+      "Bash(powershell \"Get-ChildItem -Path ''D:\\\\Kulsoom\\\\Hackathon\\\\HackathonI\\\\physical-ai-book\\\\content\\\\i18n'' -Recurse | Select-Object FullName\")",
+      "Bash(npm start)",
+      "Bash(powershell \"Get-ChildItem -Path ''D:\\\\Kulsoom\\\\Hackathon\\\\HackathonI\\\\physical-ai-book\\\\content\\\\i18n\\\\ur'' -Recurse\")",
+      "Bash(dir \"D:\\\\Kulsoom\\\\Hackathon\\\\HackathonI\\\\physical-ai-book\\\\content\\\\src\\\\pages\")",
+      "Bash(findstr /s /i \"فزیکل اے آئی\" \"D:\\\\Kulsoom\\\\Hackathon\\\\HackathonI\\\\physical-ai-book\\\\content\\\\i18n\\\\ur\\\\docusaurus-plugin-content-docs\\\\current\\\\*\")",
+      "Bash(powershell \"Get-ChildItem -Path ''D:\\\\Kulsoom\\\\Hackathon\\\\HackathonI\\\\physical-ai-book\\\\content\\\\i18n\\\\ur\\\\docusaurus-plugin-content-docs\\\\current'' -Recurse -Filter ''*.md'' | Select-String -Pattern ''فزیکل اے آئی''\")",
+      "Bash(powershell \"Get-ChildItem -Path ''D:\\\\Kulsoom\\\\Hackathon\\\\HackathonI\\\\physical-ai-book\\\\content\\\\i18n\\\\ur\\\\docusaurus-plugin-content-docs\\\\current\\\\modules'' -Recurse -Filter ''*.md'' | ForEach-Object { Select-String -Pattern ''فزیکل اے آئی'' -Path $_FullName }\")",
+      "Bash(powershell \"Get-Content ''D:\\\\Kulsoom\\\\Hackathon\\\\HackathonI\\\\physical-ai-book\\\\content\\\\i18n\\\\ur\\\\docusaurus-plugin-content-docs\\\\current\\\\modules\\\\module1\\\\chapter2.md'' | Select-String ''فزیکل اے آئی''\")",
+      "Bash(powershell -Command \"Select-String -Path ''D:\\\\Kulsoom\\\\Hackathon\\\\HackathonI\\\\physical-ai-book\\\\content\\\\i18n\\\\ur\\\\docusaurus-plugin-content-docs\\\\current\\\\modules\\\\module1\\\\chapter1.md'' -Pattern ''فزیکل اے آئی'' -SimpleMatch\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path ''D:\\\\Kulsoom\\\\Hackathon\\\\HackathonI\\\\physical-ai-book\\\\content\\\\i18n\\\\ur\\\\docusaurus-plugin-content-docs\\\\current\\\\modules'' -Recurse -Filter ''*.md'' | ForEach-Object { $content = Get-Content $_FullName; if \\($content -match ''فزیکل اے آئی''\\) { Write-Host ''Found in:'' $_FullName } }\")"
     ]
   }
 }

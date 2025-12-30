@@ -1,0 +1,46 @@
+{
+  "link.title.Book": {
+    "message": "کتاب",
+    "description": "The title of the footer links column with title=Book in the footer"
+  },
+  "link.title.Connect": {
+    "message": "رابطہ",
+    "description": "The title of the footer links column with title=Connect in the footer"
+  },
+  "link.title.Contact": {
+    "message": "رابطہ کریں",
+    "description": "The title of the footer links column with title=Contact in the footer"
+  },
+  "link.item.label.Physical AI & Humanoid Robotics": {
+    "message": "فزیکل اے آئی اور ہیومینائڈ روبوٹکس",
+    "description": "The label of footer link with label=Physical AI & Humanoid Robotics linking to /docs/intro"
+  },
+  "link.item.label.LinkedIn": {
+    "message": "لنکڈ ان",
+    "description": "The label of footer link with label=LinkedIn linking to https://www.linkedin.com/in/kulsoomimran/"
+  },
+  "link.item.label.X (Twitter)": {
+    "message": "ایکس (ٹویٹر)",
+    "description": "The label of footer link with label=X (Twitter) linking to https://x.com/kulsoomiimran"
+  },
+  "link.item.label.GitHub": {
+    "message": "گِٹ ہب",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/kulsoomimran"
+  },
+  "link.item.label.Portfolio": {
+    "message": "پورٹ فولیو",
+    "description": "The label of footer link with label=Portfolio linking to https://kulsoom-portfolio.vercel.app/"
+  },
+  "link.item.label.Email for Feedback": {
+    "message": "رائے کے لیے ای میل کریں",
+    "description": "The label of footer link with label=Email for Feedback linking to mailto:kulsoom.iimran@gmail.com"
+  },
+  "link.item.label.Project Repository": {
+    "message": "پروجیکٹ ذخیرہ",
+    "description": "The label of footer link with label=Project Repository linking to https://github.com/kulsoomimran/physical_ai_and_humanoid_robotics"
+  },
+  "copyright": {
+    "message": "© 2025 کلثوم عمران۔ تمام حقوق محفوظ ہیں۔",
+    "description": "The footer copyright"
+  }
+}
