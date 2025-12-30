@@ -16,11 +16,11 @@
     "description": "The explore modules button text on the home page"
   },
   "pages.index.section.title.bridgingGap": {
-    "message": "AI اور جسمانی نظام کے درمیان خلاء کو پانے کا",
+    "message": "AI اور فزیکل نظام کے درمیان خلاء کو پانے کا",
     "description": "The title for the bridging gap section on the home page"
   },
   "pages.index.section.content.bridgingGap": {
-    "message": "یہ جامع گائیڈ AI اور روبوٹکس کے مابین ربط کا مطالعہ کرتا ہے، اس بات پر توجہ مرکوز کرتے ہوئے کہ جسمانی نظام کیسے سیکھتے ہیں، ایڈجسٹ ہوتے ہیں، اور جسمانی دنیا کے ساتھ تعامل کرتے ہیں۔",
+    "message": "یہ جامع گائیڈ AI اور روبوٹکس کے مابین ربط کا مطالعہ کرتا ہے، اس بات پر توجہ مرکوز کرتے ہوئے کہ فزیکل نظام کیسے سیکھتے ہیں، ایڈجسٹ ہوتے ہیں، اور فزیکل دنیا کے ساتھ تعامل کرتے ہیں۔",
     "description": "The content for the bridging gap section on the home page"
   },
   "pages.index.section.title.whoFor": {
@@ -32,11 +32,11 @@
     "description": "The title for the what you'll learn section on the home page"
   },
   "pages.index.section.title.readyToDive": {
-    "message": "کیا آپ ڈُوبنے کے لیے تیار ہیں؟",
+    "message": "کیا آپ شروع کرنے کو تیار ہیں؟",
     "description": "The title for the ready to dive in section on the home page"
   },
   "pages.index.section.content.readyToDive": {
-    "message": "روبوٹکس اور جسمانی AI میں اپنے سفر کا آغاز کریں۔ یہ کتاب مستقبل کی تعمیر کے لیے علم اور اوزار فراہم کرتی ہے۔",
+    "message": "روبوٹکس اور فزیکل AI میں اپنے سفر کا آغاز کریں۔ یہ کتاب مستقبل کی تعمیر کے لیے علم اور اوزار فراہم کرتی ہے۔",
     "description": "The content for the ready to dive in section on the home page"
   },
   "pages.index.card.title.aiResearchers": {
@@ -44,7 +44,7 @@
     "description": "The title for AI Researchers card"
   },
   "pages.index.card.content.aiResearchers": {
-    "message": "جسمانی نظام میں ایمبیڈڈ AI نظام کو سمجھیں۔",
+    "message": "فزیکل نظام میں ایمبیڈڈ AI نظام کو سمجھیں۔",
     "description": "The content for AI Researchers card"
   },
   "pages.index.card.title.roboticsEngineers": {
@@ -108,7 +108,7 @@
     "description": "The title for Embodied Intelligence feature"
   },
   "pages.index.feature.content.embodiedIntelligence": {
-    "message": "AI جسمانی دنیا کے ساتھ کیسے تعامل کرتا ہے",
+    "message": "AI فزیکل دنیا کے ساتھ کیسے تعامل کرتا ہے",
     "description": "The content for Embodied Intelligence feature"
   },
   "theme.ErrorPageContent.title": {
